@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap');
 body {
     box-sizing: border-box;
     padding: 0;
@@ -16,11 +15,23 @@ a {
 
 /*Header*/
 .header {
+    position: relative;
     background-color: #2D303A;
     padding: 30px 13px 30px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.header::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #323746;
+    width: 100%;
+    height: 6px;
 }
 
 .header-title {
@@ -29,7 +40,7 @@ a {
     color: #ffffff;
     font-family: 'Lato', sans-serif;
     font-size: 24px;
-    font-weight: 900;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -55,7 +66,7 @@ a {
     color: #ffffff;
     font-family: 'Lato', sans-serif;
     font-size: 12px;
-    font-weight: 900;
+    font-weight: 700;
     text-transform: uppercase;
 }
 
@@ -73,6 +84,10 @@ a {
     background-color: #F06C64;
 } 
 
+.header-navigation-item {
+    position: relative;
+}
+
 .header-navigation-item:not(:first-child) {
     margin-left: 38px;
 }
@@ -81,11 +96,11 @@ a {
     content: "·";
 
     position: absolute;
-    left: -18px;
+    left: -20px;
     color: #494E62;
     font-family: 'Lato', sans-serif;
     font-size: 12px;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .header-navigation-item.selected a {
@@ -94,31 +109,73 @@ a {
 /*Header*/
 
 /*Slider*/
-.slider {}
+.slider {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F06C64;
+    height: 600px;
+}
 
-.slider-prev-button {}
+.slider::after {
+    content: "";
 
-.slider-next-button {}
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #EA676B;
+    height: 6px;
+    width: 100%;
+}
 
-.slider-content {}
+.slider-button {
+    cursor: pointer;
+    display: block;
+}
+
+.slider-button.prev {
+    padding-left: 42px;
+    padding-right: 10px;
+}
+
+.slider-button.next {
+    padding-right: 40px;
+    padding-left: 10px;
+}
+
+.slider-button-container {
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.slider-button-container:hover {
+    transition: 0.3s;
+    background-color: rgba(241, 241, 241, 0.5);
+}
+
+.slider-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.slider-content img:first-child {
+    position: absolute;
+    bottom: 63px;
+    left: 45px;
+}
+
+.slider-content img:last-child {
+    position: absolute;
+    bottom: 180px;
+    left: 367px;
+}
 
 .slider-content-item {}
 /*Slider*/
 
-/*Our Services*/
-.our-services {}
 
-.our-services-title {}
-
-.our-services-subtitle {}
-
-.our-services-list {}
-
-.our-services-list-item {}
-
-.our-services-list-item .content {}
-
-.content .icon
-.content .content-title {}
-.content .content-description{}
 /*Our Services*/
