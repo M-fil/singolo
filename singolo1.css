@@ -51,7 +51,7 @@ a {
 
   display: flex;
   justify-content: space-between;
-  padding: 30px 13px 36px 40px;
+  padding: 30px 13px 35px 40px;
 
   background-color: #2d303a;
 }
@@ -69,6 +69,8 @@ a {
 }
 
 .header-title {
+  display: flex;
+
   font-size: 24px;
   font-family: "Lato-bold";
   color: #ffffff;
@@ -223,7 +225,7 @@ a {
 .our-services {
   position: relative;
 
-  padding: 60px 0 0 41px;
+  padding: 60px 0 20px 41px;
 
   background-color: #f2f2f2;
 }
@@ -269,7 +271,7 @@ a {
   display: flex;
   width: 299px;
   margin-right: 20px;
-  margin-bottom: 29px;
+  margin-bottom: 34px;
 }
 
 .our-services-list-item .icon {
@@ -307,7 +309,7 @@ a {
   font-family: "Lato-regular";
   color: #767e9e;
   white-space: pre-wrap;
-  text-overflow: ellipsis;
+  word-break: break-all;
 }
 
 /*Our Services*/
