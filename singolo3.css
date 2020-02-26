@@ -1,48 +1,99 @@
 /*Fonts*/
 @font-face {
     font-family: "Lato-black";
-  
+
     src: url("assets/Lato-Black.ttf");
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: "Lato-bold";
-  
+
     src: url("assets/Lato-Bold.ttf");
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: "Lato-regular";
-  
+
     src: url("assets/Lato-Regular.ttf");
-  }
-  
-  @font-face {
+}
+
+@font-face {
     font-family: "Lato-light";
-  
+
     src: url("assets/Lato-Light.ttf");
-  }
-  
-  /*Fonts*/
-  
-  /*Portfolio*/
-  body {
+}
+
+/*Fonts*/
+
+body {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  
-  h1 {
+}
+
+h1 {
     margin: 0;
-  }
-  
-  ul {
+}
+
+ul {
     list-style: none;
-  
+
     padding-inline-start: 0;
-  }
-  
-  a {
+}
+
+a {
     text-decoration: none;
-  }
+}
+
+/*Get a Quote*/
+.get-quote {}
+.get-quote .wrapper {}
+
+.get-quote::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
   
+    width: 100%;
+    height: 6px;
+  
+    background-color: #323746;
+}
+  
+.get-quote .title {
+    margin-bottom: 22px;
+  
+    font-size: 30px;
+    font-family: "Lato-black";
+    color: #666d89;
+}
+  
+.get-quote .subtitle {
+    font-size: 18px;
+    font-family: "Lato-light";
+    color: #767e9e;
+}
+
+.get-quote .form-container {}
+
+.form-container input, textarea, button {}
+
+.name-field {}
+.email-field {}
+.subject-field {}
+.comment-field {}
+.submit-button {}
+
+.form-container .contact-information {}
+
+.contact-information .title {}
+.contact-information .subtitle {}
+.contact-information .adress-container {}
+
+.adress-container .item {} 
+.adress-container .item .text{} 
+.adress-container .item .icon{} 
+  
+/*Get a Quote*/
+
