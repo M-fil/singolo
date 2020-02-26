@@ -121,6 +121,10 @@ a {
     margin-bottom: 20px;
 }
 
+.images .image-item:nth-child(n + 13) {
+    display: none;
+}
+
 .images .image-item img {
     width: 220px;
     height: 187px;
@@ -128,6 +132,99 @@ a {
 /*Portfolio*/
 
 /*About Us*/
+.about-us {
+    position: relative;
+    background-color: #F2F2F2;
+    padding: 60px 40px 73px 40px;
+}
 
+.about-us::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  
+    width: 100%;
+    height: 6px;
+  
+    background-color: #FFFFFF;
+}
+
+.about-us .wrapper {}
+
+.about-us .title {
+    font-family: 'Lato-black';
+    font-size: 30px;
+    color: #666D89;
+    margin-bottom: 22px;
+}
+
+.about-us .subtitle {
+    font-family: 'Lato-light';
+    font-size: 18px;
+    color: #767E9E;
+    margin-bottom: 37px;
+}
+
+.about-us .team {
+    display: flex;
+}
+
+.team .teammate {
+    width: 300px;
+}
+
+.team .teammate:not(:last-child) {
+    margin-right: 20px;
+}
+
+.teammate .image-container img {
+    width: 300px;
+    height: 300px;
+}
+
+.teammate .name {
+    font-family: 'Lato-black';
+    font-size: 18px;
+    color: #666D89;
+    margin-bottom: 11px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.teammate .description {
+    font-family: 'Lato-regular';
+    font-size: 12px;
+    color: #767E9E;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+}
+
+.social-networks {
+    display: flex;
+}
+
+.social-networks .item {
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 32px;
+    height: 32px;
+    border: 1px solid #666D89;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.social-networks .item:hover {
+    box-shadow: 0 0 5px #666D89;
+}
+
+.social-networks .item:not(:last-child) {
+    margin-right: 8px;
+}
 /*About Us*/
 
