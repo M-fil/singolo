@@ -1,0 +1,48 @@
+/*Fonts*/
+@font-face {
+    font-family: "Lato-black";
+  
+    src: url("assets/Lato-Black.ttf");
+  }
+  
+  @font-face {
+    font-family: "Lato-bold";
+  
+    src: url("assets/Lato-Bold.ttf");
+  }
+  
+  @font-face {
+    font-family: "Lato-regular";
+  
+    src: url("assets/Lato-Regular.ttf");
+  }
+  
+  @font-face {
+    font-family: "Lato-light";
+  
+    src: url("assets/Lato-Light.ttf");
+  }
+  
+  /*Fonts*/
+  
+  /*Portfolio*/
+  body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
+  ul {
+    list-style: none;
+  
+    padding-inline-start: 0;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
