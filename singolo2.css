@@ -1,15 +1,127 @@
-.portfolio {}
+/*Fonts*/
+@font-face {
+    font-family: "Lato-black";
+  
+    src: url("assets/Lato-Black.ttf");
+  }
+  
+  @font-face {
+    font-family: "Lato-bold";
+  
+    src: url("assets/Lato-Bold.ttf");
+  }
+  
+  @font-face {
+    font-family: "Lato-regular";
+  
+    src: url("assets/Lato-Regular.ttf");
+  }
+  
+  @font-face {
+    font-family: "Lato-light";
+  
+    src: url("assets/Lato-Light.ttf");
+  }
+  
+/*Fonts*/
+  
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+
+    padding-inline-start: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.portfolio {
+    position: relative;
+    background-color: #2D303A;
+    padding: 61px 20px 53px 40px;
+}
+
+.portfolio::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  
+    width: 100%;
+    height: 6px;
+  
+    background-color: #323746;
+}
 
 .portfolio .wrapper {}
 
-.portfolio .title {}
-.portfolio .subtitle {}
+.portfolio .title {
+    font-family: 'Lato-black';
+    font-size: 30px;
+    color: #666D89;
+    margin-bottom: 22px;
+}
 
-.portfolio .badges {}
+.portfolio .subtitle {
+    font-family: 'Lato-light';
+    font-size: 18px;
+    color: #767E9E;
+    margin-bottom: 8px;
+}
 
-.badges .item {}
+.portfolio .badges {
+    display: flex;
+    margin-bottom: 19px;
+}
 
-.images {}
+.badges .item {
+    cursor: pointer;
+    border: 1px solid #666D89;
+    border-radius: 5px;
+    font-family: 'Lato-regular';
+    font-size: 12px;
+    color: #767E9E;
+    padding: 4px 7px;
+    min-width: 29px;
+    text-align: center;
+    transition: 0.3s;
+}
+.badges .item:hover {
+    color: #DEDEDE;
+    border-color: #C5C5C5;
+}
 
-.images .image-item {}
-.images .image-item img {}
+.badges .item.selected {
+    color: #DEDEDE;
+    border-color: #C5C5C5;
+}
+
+.badges .item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.images {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.images .image-item {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.images .image-item img {
+    width: 220px;
+    height: 187px;
+}
