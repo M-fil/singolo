@@ -64,8 +64,6 @@ a {
     background-color: #323746;
 }
 
-.portfolio .wrapper {}
-
 .portfolio .title {
     font-family: 'Lato-black';
     font-size: 30px;
@@ -77,7 +75,6 @@ a {
     font-family: 'Lato-light';
     font-size: 18px;
     color: #767E9E;
-    margin-bottom: 8px;
 }
 
 .portfolio .badges {
@@ -92,11 +89,11 @@ a {
     font-family: 'Lato-regular';
     font-size: 12px;
     color: #767E9E;
-    padding: 4px 7px;
-    min-width: 29px;
-    text-align: center;
+    padding: 2.5px 6.5px;
+    line-height: 0.8rem;
     transition: 0.3s;
 }
+
 .badges .item:hover {
     color: #DEDEDE;
     border-color: #C5C5C5;
@@ -108,7 +105,7 @@ a {
 }
 
 .badges .item:not(:last-child) {
-    margin-right: 10px;
+    margin-right: 9px;
 }
 
 .images {
@@ -118,7 +115,7 @@ a {
 
 .images .image-item {
     margin-right: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .images .image-item:nth-child(n + 13) {
@@ -150,20 +147,20 @@ a {
     background-color: #FFFFFF;
 }
 
-.about-us .wrapper {}
-
 .about-us .title {
     font-family: 'Lato-black';
     font-size: 30px;
     color: #666D89;
-    margin-bottom: 22px;
+    margin-bottom: 21px;
 }
 
 .about-us .subtitle {
     font-family: 'Lato-light';
     font-size: 18px;
     color: #767E9E;
-    margin-bottom: 37px;
+    margin-bottom: 46px;
+    line-height: 1.7rem;
+    letter-spacing: 0.15px;
 }
 
 .about-us .team {
@@ -181,13 +178,14 @@ a {
 .teammate .image-container img {
     width: 300px;
     height: 300px;
+    margin-bottom: 13px;
 }
 
 .teammate .name {
     font-family: 'Lato-black';
     font-size: 18px;
     color: #666D89;
-    margin-bottom: 11px;
+    margin-bottom: 10px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -197,8 +195,10 @@ a {
     font-family: 'Lato-regular';
     font-size: 12px;
     color: #767E9E;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
     word-wrap: break-word;
+    line-height: 1.2rem;
+    letter-spacing: 0.1px;
 }
 
 .social-networks {
@@ -224,7 +224,7 @@ a {
 }
 
 .social-networks .item:not(:last-child) {
-    margin-right: 8px;
+    margin-right: 6px;
 }
 /*About Us*/
 
