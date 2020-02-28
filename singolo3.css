@@ -46,7 +46,12 @@ a {
 }
 
 /*Get a Quote*/
-.get-quote {}
+.get-quote {
+    position: relative;
+    background-color: #F06C64;
+    padding: 61px 20px 53px 40px;
+}
+
 .get-quote .wrapper {}
 
 .get-quote::after {
@@ -58,7 +63,7 @@ a {
     width: 100%;
     height: 6px;
   
-    background-color: #323746;
+    background-color: #EA676B;
 }
   
 .get-quote .title {
@@ -66,18 +71,76 @@ a {
   
     font-size: 30px;
     font-family: "Lato-black";
-    color: #666d89;
+    color: #F0D8D9;
 }
   
 .get-quote .subtitle {
     font-size: 18px;
     font-family: "Lato-light";
-    color: #767e9e;
+    color: #F0D8D9;
+    margin-bottom: 40px;
 }
 
-.get-quote .form-container {}
+.get-quote .form-container {
+    display: flex;
+}
 
-.form-container input, textarea, button {}
+.form-container input, textarea
+{
+    background-color: #D6564F;
+    border: none;
+    padding-left: 14.5px;
+    border-radius: 5px;
+}
+
+.form-container input::placeholder, textarea::placeholder {
+    color: #F48C8F;
+    font-family: "Lato-regular";
+    font-size: 12px;
+}
+
+.form-container .form {
+    display: flex;
+    flex-direction: column;
+    margin-right: 21px;
+}
+
+.form-container .form input, textarea {
+    margin-bottom: 16px;
+    width: 619px;
+}
+
+.form-container .form input:hover, textarea:hover {
+    transition: 0.3s;
+}
+
+.form-container .form input:focus, textarea:focus {
+    outline: none;
+}
+
+.form-container .form input {
+    height: 38px;
+}
+
+.form-container .form textarea {
+    height: 202px;
+    padding-top: 9.5px;
+}
+
+.form-container .form button {
+    cursor: pointer;
+    width: 100px;
+    height: 38px;
+    background-color: #F06C64;
+    color: #D6564F;
+    border: 2px solid #D6564F;
+    border-radius: 5px;
+}
+
+.form-container .form button:hover {
+    transition: 0.3s;
+    background-color: #F48C8F;
+}
 
 .name-field {}
 .email-field {}
@@ -87,12 +150,31 @@ a {
 
 .form-container .contact-information {}
 
-.contact-information .title {}
-.contact-information .subtitle {}
+.contact-information .title {
+    font-size: 18px;
+    margin-bottom: 11px;
+}
+
+.contact-information .subtitle {
+    font-family: "Lato-regular";
+    font-size: 12px;
+    margin-bottom: 33px;
+    line-height: 22px;
+}
+
 .contact-information .adress-container {}
 
-.adress-container .item {} 
-.adress-container .item .text{} 
+.adress-container .item .text{
+    font-size: 12px;
+    font-family: "Lato-regular";
+    color: #F0D8D9;
+    line-height: 22px;
+} 
+
+.adress-container .item a:hover {
+    text-decoration: underline;
+} 
+
 .adress-container .item .icon{} 
   
 /*Get a Quote*/
