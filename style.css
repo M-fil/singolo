@@ -42,6 +42,7 @@ ul {
 }
 
 a {
+  color: #767e9e;
   text-decoration: none;
 }
 /*Common Styles*/
@@ -52,7 +53,7 @@ a {
 
   display: flex;
   justify-content: space-between;
-  padding: 30px 13px 35px 40px;
+  padding: 30px 13px 36px 40px;
 
   background-color: #2d303a;
 }
@@ -226,7 +227,7 @@ a {
 .our-services {
   position: relative;
 
-  padding: 60px 0 20px 41px;
+  padding: 60px 0 22px 41px;
 
   background-color: #f2f2f2;
 }
@@ -409,7 +410,7 @@ a {
 .about-us {
   position: relative;
 
-  padding: 60px 40px 56px 40px;
+  padding: 60px 40px 72px 40px;
 
   background-color: #f2f2f2;
 }
@@ -427,7 +428,7 @@ a {
 }
 
 .about-us .title {
-  margin-bottom: 21px;
+  margin-bottom: 18px;
 
   font-size: 30px;
   font-family: "Lato-black";
@@ -438,10 +439,9 @@ a {
   margin-bottom: 46px;
 
   font-size: 18px;
-  line-height: 1.7rem;
+  line-height: 1.6;
   font-family: "Lato-light";
   color: #767e9e;
-  letter-spacing: 0.15px;
 }
 
 .about-us .team {
@@ -461,7 +461,7 @@ a {
 .teammate .image-container img {
   width: 300px;
   height: 300px;
-  margin-bottom: 13px;
+  margin-bottom: 12px;
 }
 
 .teammate .name {
@@ -479,11 +479,9 @@ a {
   margin-bottom: 24px;
 
   font-size: 12px;
-  line-height: 1.2rem;
+  line-height: 1.7;
   font-family: "Lato-regular";
   color: #767e9e;
-  letter-spacing: 0.1px;
-  word-wrap: break-word;
 }
 
 .social-networks {
@@ -494,8 +492,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 32px;
-  height: 32px;
+  width: 31px;
+  height: 31px;
 
   border: 1px solid #666d89;
   border-radius: 50%;
@@ -509,7 +507,7 @@ a {
 }
 
 .social-networks .item:not(:last-child) {
-  margin-right: 6px;
+  margin-right: 7px;
 }
 /*About Us*/
 
@@ -555,7 +553,7 @@ a {
 }
 
 .get-quote .title {
-  margin-bottom: 21px;
+  margin-bottom: 18px;
 
   font-size: 30px;
   font-family: "Lato-black";
@@ -579,8 +577,7 @@ a {
 textarea {
   width: 590px;
   max-width: 590px;
-  height: 38px;
-  margin-bottom: 16px;
+  margin-bottom: 15.5px;
   padding: 0 15px;
   padding-left: 14.5px;
 
@@ -634,6 +631,7 @@ input:focus {
 }
 
 .form-container .form button {
+  display: none;
   width: 100px;
   height: 38px;
 
@@ -702,7 +700,9 @@ input:focus {
 }
 
 .footer .copyright {
-  font-size: 13px;
+  font-size: 12px;
+  line-height: 1.6;
+  font-family: "Lato-regular";
   color: #767e9e;
 }
 
@@ -713,5 +713,9 @@ input:focus {
 
 .footer .social-networks .item:hover {
   box-shadow: 0 0 10px #ffffff;
+}
+
+.footer .copyright a:hover {
+  color: #f06c64;
 }
 /*Footer*/
