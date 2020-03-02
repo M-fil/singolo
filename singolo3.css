@@ -49,7 +49,7 @@ a {
 .get-quote {
     position: relative;
     background-color: #F06C64;
-    padding: 61px 20px 53px 40px;
+    padding: 61px 20px 55px 40px;
 }
 
 .get-quote .wrapper {}
@@ -67,7 +67,7 @@ a {
 }
   
 .get-quote .title {
-    margin-bottom: 22px;
+    margin-bottom: 21px;
   
     font-size: 30px;
     font-family: "Lato-black";
@@ -78,7 +78,8 @@ a {
     font-size: 18px;
     font-family: "Lato-light";
     color: #F0D8D9;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
+    line-height: 1.6;
 }
 
 .get-quote .form-container {
@@ -87,10 +88,18 @@ a {
 
 .form-container input, textarea
 {
+    font-family: "Lato-regular";
+    font-size: 12px;
     background-color: #D6564F;
     border: none;
     padding-left: 14.5px;
     border-radius: 5px;
+    color: #F48C8F;
+    margin-bottom: 16px;
+    max-width: 590px;
+    width: 590px;
+    height: 38px;
+    padding: 0 15px;
 }
 
 .form-container input::placeholder, textarea::placeholder {
@@ -103,11 +112,6 @@ a {
     display: flex;
     flex-direction: column;
     margin-right: 21px;
-}
-
-.form-container .form input, textarea {
-    margin-bottom: 16px;
-    width: 619px;
 }
 
 .form-container .form input:hover, textarea:hover {
@@ -123,11 +127,18 @@ a {
 }
 
 .form-container .form textarea {
-    height: 202px;
-    padding-top: 9.5px;
+    resize: none;
+    padding: 9.5px 14px;
+    height: 185px;
+    max-height: 202px;
+}
+
+.form-container .form textarea:focus, input:focus {
+    box-shadow: 0 0 0 3px #F48C8F;
 }
 
 .form-container .form button {
+    font-size: 20px;
     cursor: pointer;
     width: 100px;
     height: 38px;
@@ -135,11 +146,13 @@ a {
     color: #D6564F;
     border: 2px solid #D6564F;
     border-radius: 5px;
+    transition: 0.3s;
 }
 
 .form-container .form button:hover {
-    transition: 0.3s;
-    background-color: #F48C8F;
+    color: #F48C8F;
+    border-color: #F48C8F;
+    background-color: #D6564F;
 }
 
 .name-field {}
@@ -152,37 +165,61 @@ a {
 
 .contact-information .title {
     font-size: 18px;
-    margin-bottom: 11px;
+    margin-bottom: 10px;
 }
 
 .contact-information .subtitle {
     font-family: "Lato-regular";
     font-size: 12px;
-    margin-bottom: 33px;
-    line-height: 22px;
+    margin-bottom: 25px;
+    line-height: 1.7;
 }
 
-.contact-information .adress-container {}
+.adress-container .item {
+    margin-bottom: 4px;
+}
 
-.adress-container .item .text{
+.adress-container .item .content .text{
     font-size: 12px;
     font-family: "Lato-regular";
     color: #F0D8D9;
-    line-height: 22px;
 } 
 
-.adress-container .item a:hover {
+.item a > .text:hover {
     text-decoration: underline;
 } 
 
-.adress-container .item .icon{} 
+.adress-container .item .content img {
+    width: 12px;
+    height: 11px;
+    margin-right: 6px;
+} 
   
 /*Get a Quote*/
 
 /*Footer*/
-.footer {}
-.footer .copyright {}
+.footer {
+    background-color: #2D303A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 40px 22px 42px;
+}
+
+.footer .copyright {
+    font-size: 13px;
+    color: #767e9e;
+}
+
 .footer .social-networks {}
-.footer .social-networks .item {}
+
+.footer .social-networks .item {
+    border-color: #666D89;
+    background-color: #2D303A;
+}
+
+.footer .social-networks .item:hover {
+    box-shadow: 0 0 10px #ffffff;
+}
 /*Footer*/
 
