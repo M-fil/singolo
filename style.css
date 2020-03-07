@@ -636,7 +636,6 @@ input:focus {
 }
 
 .form-container .form button {
-  display: none;
   width: 100px;
   height: 38px;
 
