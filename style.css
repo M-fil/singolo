@@ -137,6 +137,7 @@ a {
 .header-navigation-item:not(:first-child)::before {
   content: "·";
   position: absolute;
+  bottom: 2px;
   left: -16px;
 
   font-size: 12px;
@@ -259,6 +260,7 @@ a {
   font-size: 18px;
   line-height: 30px;
   font-family: "Lato-light";
+  text-align: justify;
   color: #767e9e;
 }
 
@@ -309,9 +311,8 @@ a {
   font-size: 12px;
   line-height: 22px;
   font-family: "Lato-regular";
+  text-align: justify;
   color: #767e9e;
-  white-space: pre-wrap;
-  word-break: break-all;
 }
 /*Our Services*/
 
@@ -347,6 +348,7 @@ a {
 .portfolio .subtitle {
   font-size: 18px;
   font-family: "Lato-light";
+  text-align: justify;
   color: #767e9e;
 }
 
@@ -441,6 +443,7 @@ a {
   font-size: 18px;
   line-height: 1.6;
   font-family: "Lato-light";
+  text-align: justify;
   color: #767e9e;
 }
 
@@ -481,6 +484,7 @@ a {
   font-size: 12px;
   line-height: 1.7;
   font-family: "Lato-regular";
+  text-align: justify;
   color: #767e9e;
 }
 
@@ -492,8 +496,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 31px;
-  height: 31px;
+  width: 30px;
+  height: 30px;
 
   border: 1px solid #666d89;
   border-radius: 50%;
@@ -507,7 +511,7 @@ a {
 }
 
 .social-networks .item:not(:last-child) {
-  margin-right: 7px;
+  margin-right: 8px;
 }
 /*About Us*/
 
@@ -535,7 +539,7 @@ a {
 .get-quote {
   position: relative;
 
-  padding: 61px 20px 55px 40px;
+  padding: 61px 40px 55px 40px;
 
   background-color: #f06c64;
 }
@@ -566,6 +570,7 @@ a {
   font-size: 18px;
   line-height: 1.6;
   font-family: "Lato-light";
+  text-align: justify;
   color: #f0d8d9;
 }
 
@@ -654,17 +659,17 @@ input:focus {
 }
 
 .contact-information .title {
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 
   font-size: 18px;
 }
 
-.contact-information .subtitle {
+.contact-information > .subtitle {
   margin-bottom: 25px;
 
   font-size: 12px;
   line-height: 1.7;
-  font-family: "Lato-regular";
+  text-align: justify;
 }
 
 .adress-container .item {
@@ -713,9 +718,5 @@ input:focus {
 
 .footer .social-networks .item:hover {
   box-shadow: 0 0 10px #ffffff;
-}
-
-.footer .copyright a:hover {
-  color: #f06c64;
 }
 /*Footer*/
