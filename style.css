@@ -158,25 +158,35 @@ a {
   justify-content: space-between;
   align-items: center;
   height: 600px;
-
-  background-color: #f06c64;
 }
 
-.slider::after {
-  content: "";
+.slider-button-container {
   position: absolute;
-  bottom: 0;
+  z-index: 100;
+  
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.slider-button-container:first-child {
   left: 0;
+}
 
-  width: 100%;
-  height: 6px;
+.slider-button-container:last-child {
+  right: 0;
+}
 
-  background-color: #ea676b;
+.slider-button-container:hover {
+  background-color: rgba(241, 241, 241, 0.5);
 }
 
 .slider-button {
   display: block;
-
   cursor: pointer;
 }
 
@@ -190,37 +200,73 @@ a {
   padding-left: 10px;
 }
 
-.slider-button-container {
-  display: flex;
-  align-items: center;
-  height: 100%;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-.slider-button-container:hover {
-  background-color: rgba(241, 241, 241, 0.5);
-}
-
 .slider-content {
   position: relative;
-
+  overflow: hidden;
   width: 100%;
   height: 100%;
 }
 
-.slider-content img:first-child {
+.slider-content div::after {
+  content: "";
   position: absolute;
-  bottom: 63px;
-  left: 43px;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 6px;
 }
 
-.slider-content img:last-child {
+/*first-slide*/
+
+.first-slide {
+  height: 100%;
+  background-color: #f06c64;
+}
+
+.first-slide::after {
+  background-color: #ea676b;
+}
+
+.slider-content .first-slide img:first-child {
   position: absolute;
-  bottom: 185px;
-  left: 357px;
+  left: 112px;
+  top: 54px;  
+}
+
+.slider-content .first-slide img:last-child {
+  position: absolute;
+  left: 425px;
+  top: 177px;  
+}
+
+/*second-slide*/
+
+.second-slide {
+  height: 100%;
+  background-color: #648BF0;
+}
+
+.second-slide::after {
+  display: none;
+}
+
+.slider-content .second-slide img:first-child {
+  position: absolute;
+  left: 383px;
+  top: 43px;
+}
+
+.slider-content .second-slide img:nth-child(2) {
+  position: absolute;
+  left: 252px;
+  top: 152px;
+}
+
+.slider-content .second-slide img:last-child {
+  position: absolute;
+  left: 612px;
+  top: 152px;
 }
 /*Slider*/
 
