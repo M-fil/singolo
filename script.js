@@ -29,15 +29,15 @@ const nextButton = sliderBlock.querySelector('.next');
 
 const firstSlide = `
 <div class="first-slide">
-    <img src="assets/phone1.png" alt="" class="slider-content-item">
-    <img src="assets/phone2.png" alt="" class="slider-content-item">
+    <img class="slider-content-item" src="assets/phone1.png" alt="">
+    <img class="slider-content-item" src="assets/phone2.png" alt="">
 </div>`;
 
 const secondSlide = `
 <div class="second-slide">
-    <img src="assets/slider-content-center.png" alt="">
-    <img src="assets/slider-content-left.png" alt="">
-    <img src="assets/slider-content-right.png" alt="">
+    <img class="slider-content-item" src="assets/slider-content-center.png" alt="">
+    <img class="slider-content-item" src="assets/slider-content-side.png" alt="">
+    <img class="slider-content-item" src="assets/slider-content-side.png" alt="">
 </div>`;
 
 const list = [firstSlide, secondSlide];
@@ -46,29 +46,37 @@ let length = list.length - 1;
 
 nextButton.parentElement.addEventListener('click', () => {
     current = current < length ? current + 1 : 0;
-    slidesContainer.innerHTML = list[current]
-
-    /*if (current === 1) {
-        sliderBlock.classList.add('second-slide')
-        sliderBlock.style.backgroundColor = '#648BF0';
-    } else {
-        sliderBlock.classList.remove('second-slide')
-        sliderBlock.style.backgroundColor = '#ea676b';
-    }*/
+    slidesContainer.innerHTML = list[current];
 });
 
 prevButton.parentElement.addEventListener('click', () => {
     current = current > 0 ? current - 1 : length;
     slidesContainer.innerHTML = list[current];
-
-    /*if (current === 1) {
-        sliderBlock.classList.add('second-slide')
-        sliderBlock.style.backgroundColor = '#648BF0';
-    } else {
-        sliderBlock.classList.remove('second-slide')
-        sliderBlock.style.backgroundColor = '#ea676b';
-    }*/
 });
 
-//const firstSlide = slidesContainer.querySelector('.first-slide');
-//const secondSlide = slidesContainer.querySelector('.second-slide');
+const firstSlideElement = slidesContainer.querySelector('.first-slide');
+const secondSlideElement = slidesContainer.querySelector('.second-slide');
+
+function getPhoneImage(elem) {
+    let noScreenScr = elem.getAttribute('src').replace(/.png/g, '-no-screen.png');
+    let withScreenSrc = elem.getAttribute('src').replace(/-no-screen.png/g, '.png');
+
+    if (elem.classList.contains('no-screen')) {
+        elem.setAttribute('src', withScreenSrc);
+        console.log('no-screen', elem.getAttribute('src'))
+    } else {
+        elem.setAttribute('src', noScreenScr);
+        console.log('screen', elem.getAttribute('src'))
+    }
+}
+
+if (document.body.contains(firstSlideElement)) {
+    document.addEventListener('click', (event) => {
+        if (event.target.tagName !== "IMG") return;
+    
+        getPhoneImage(event.target)
+    
+        event.target.classList.toggle('no-screen');
+    })    
+}
+
