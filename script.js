@@ -63,10 +63,8 @@ function getPhoneImage(elem) {
 
     if (elem.classList.contains('no-screen')) {
         elem.setAttribute('src', withScreenSrc);
-        console.log('no-screen', elem.getAttribute('src'))
     } else {
         elem.setAttribute('src', noScreenScr);
-        console.log('screen', elem.getAttribute('src'))
     }
 }
 
@@ -79,4 +77,57 @@ if (document.body.contains(firstSlideElement)) {
         event.target.classList.toggle('no-screen');
     })    
 }
+
+
+/*Portfolio Tabs*/
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let swap = array[i];
+        array[i] = array[j];
+        array[j] = swap;
+    }
+
+    return array;
+}
+
+const portfolioBlock = document.querySelector('.portfolio');
+
+const badgesContainer = portfolioBlock.querySelector('.badges');
+const badges = badgesContainer.querySelectorAll('.item');
+
+const portfolioImagesContainer = portfolioBlock.querySelector('.images')
+const portfolioImages = portfolioImagesContainer.querySelectorAll('.image-item');
+
+
+const fullArray = (array) => {
+    for (let i = 0; i < 12; i++) {
+        array.push(i);
+    }
+
+    return array;
+};
+const imagesArray = fullArray([]);
+
+const getItemImageTemplate = (n) => {
+    return `
+    <div class="image-item">
+        <img src="assets/portfolio-image-${n + 1}.png" alt="" data-number=${n + 1}>
+    </div>`;
+}
+
+
+badgesContainer.addEventListener('click', (event) => {
+    if (event.target.className !== 'item') return;
+
+    portfolioImagesContainer.innerHTML = '';
+
+    selectSingleElementFromList(event.target);
+    shuffle(imagesArray);
+
+    for (let i = 0; i < imagesArray.length; i++) {
+        portfolioImagesContainer.innerHTML += getItemImageTemplate(imagesArray[i]);
+    }
+});
+
 
