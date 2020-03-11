@@ -450,6 +450,11 @@ a {
   width: 220px;
   height: 187px;
 }
+
+.images .image-item img.selected {
+  box-shadow: 0 0 0 5px #F06C64;
+}
+
 /*Portfolio*/
 
 /*About Us*/

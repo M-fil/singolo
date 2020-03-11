@@ -1,6 +1,7 @@
 /*Navigation*/
-function selectSingleElementFromList(element) {
-    let selected = element.closest('ul').querySelectorAll('.selected');
+function selectSingleElementFromList(element, html) {
+    let selected = element.closest(html).querySelectorAll('.selected');
+    console.log('selected', selected)
     for (const item of selected) {
         item.classList.remove('selected');
     }
@@ -13,7 +14,7 @@ let headerNavigationList = document.querySelector('.header-navigation');
 headerNavigationList.addEventListener('click', (event) => {
     if (event.target.parentElement.tagName !== 'LI') return;
 
-    selectSingleElementFromList(event.target.parentElement);
+    selectSingleElementFromList(event.target.parentElement, 'ul');
 
     const blockId = document.querySelector(`[data-scrollid=${event.target.getAttribute('href').slice(1)}]`);
     blockId.scrollIntoView({block: 'center', behavior: 'smooth'});
@@ -68,15 +69,13 @@ function getPhoneImage(elem) {
     }
 }
 
-if (document.body.contains(firstSlideElement)) {
-    document.addEventListener('click', (event) => {
-        if (event.target.tagName !== "IMG") return;
-    
-        getPhoneImage(event.target)
-    
-        event.target.classList.toggle('no-screen');
-    })    
-}
+sliderBlock.addEventListener('click', (event) => {
+    if (event.target.tagName !== "IMG") return;
+
+    getPhoneImage(event.target)
+
+    event.target.classList.toggle('no-screen');
+})    
 
 
 /*Portfolio Tabs*/
@@ -122,12 +121,20 @@ badgesContainer.addEventListener('click', (event) => {
 
     portfolioImagesContainer.innerHTML = '';
 
-    selectSingleElementFromList(event.target);
+    selectSingleElementFromList(event.target, 'ul');
     shuffle(imagesArray);
 
     for (let i = 0; i < imagesArray.length; i++) {
         portfolioImagesContainer.innerHTML += getItemImageTemplate(imagesArray[i]);
     }
+});
+
+
+portfolioImagesContainer.addEventListener('click', (event) => {
+    if (event.target.tagName !== "IMG") return;
+
+    console.log('fired')
+    selectSingleElementFromList(event.target, '.images');  
 });
 
 
