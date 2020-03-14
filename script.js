@@ -1,7 +1,6 @@
 /*Navigation*/
 function selectSingleElementFromList(element, html) {
     let selected = element.closest(html).querySelectorAll('.selected');
-    console.log('selected', selected)
     for (const item of selected) {
         item.classList.remove('selected');
     }
@@ -133,8 +132,39 @@ badgesContainer.addEventListener('click', (event) => {
 portfolioImagesContainer.addEventListener('click', (event) => {
     if (event.target.tagName !== "IMG") return;
 
-    console.log('fired')
     selectSingleElementFromList(event.target, '.images');  
 });
 
 
+/*Form*/
+const modalContainer = document.querySelector('.modal-conainer');
+const modalWindow = document.querySelector('.modal-window');
+const themeContent = modalWindow.querySelector('.theme .content');
+const descriptionContent = modalWindow.querySelector('.description .content');
+const confirmButton = modalContainer.querySelector('.confirm-button');
+
+const formContainer = document.querySelector('.form-container form');
+const nameField = formContainer.querySelector('.name-field');
+const emailField = formContainer.querySelector('.email-field');
+const subjectField = formContainer.querySelector('.subject-field');
+const commentField = formContainer.querySelector('.comment-field');
+
+formContainer.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    modalContainer.classList.remove('hidden');
+    themeContent.textContent = subjectField.value.trim() !== '' ? subjectField.value : 'Без темы';
+    descriptionContent.textContent = commentField.value.trim() !== '' ? commentField.value : 'Без описания';
+
+    document.body.style.overflow = 'hidden';
+});
+
+confirmButton.addEventListener('click', () => {
+    modalContainer.classList.add('hidden');
+    document.body.style.overflow = 'initial';
+
+    nameField.value = '';
+    emailField.value = '';
+    subjectField.value = '';
+    commentField.value = '';
+});
