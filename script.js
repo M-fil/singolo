@@ -1,4 +1,4 @@
-/*Navigation*/
+/*Functions*/
 function selectSingleElementFromList(element, html) {
     let selected = element.closest(html).querySelectorAll('.selected');
     for (const item of selected) {
@@ -7,6 +7,43 @@ function selectSingleElementFromList(element, html) {
     element.classList.add('selected');
 }
 
+function getPhoneImage(elem) {
+    let noScreenScr = elem.getAttribute('src').replace(/.png/g, '-no-screen.png');
+    let withScreenSrc = elem.getAttribute('src').replace(/-no-screen.png/g, '.png');
+
+    if (elem.classList.contains('no-screen')) {
+        elem.setAttribute('src', withScreenSrc);
+    } else {
+        elem.setAttribute('src', noScreenScr);
+    }
+}
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let swap = array[i];
+        array[i] = array[j];
+        array[j] = swap;
+    }
+
+    return array;
+}
+
+function fullArray(array) {
+    for (let i = 0; i < 12; i++) {
+        array.push(i);
+    }
+    return array;
+};
+
+const getItemImageTemplate = (n) => {
+    return `
+    <div class="image-item">
+        <img src="assets/portfolio-image-${n + 1}.png" alt="" data-number=${n + 1}>
+    </div>`;
+}
+
+/*Navigation*/
 const anchors = document.querySelectorAll('.header-navigation-item a');
 let headerNavigationList = document.querySelector('.header-navigation');
 
@@ -54,40 +91,17 @@ prevButton.parentElement.addEventListener('click', () => {
     slidesContainer.innerHTML = list[current];
 });
 
-const firstSlideElement = slidesContainer.querySelector('.first-slide');
-const secondSlideElement = slidesContainer.querySelector('.second-slide');
-
-function getPhoneImage(elem) {
-    let noScreenScr = elem.getAttribute('src').replace(/.png/g, '-no-screen.png');
-    let withScreenSrc = elem.getAttribute('src').replace(/-no-screen.png/g, '.png');
-
-    if (elem.classList.contains('no-screen')) {
-        elem.setAttribute('src', withScreenSrc);
-    } else {
-        elem.setAttribute('src', noScreenScr);
-    }
-}
+/*Screens of Smartphones*/
 
 sliderBlock.addEventListener('click', (event) => {
     if (event.target.tagName !== "IMG") return;
 
-    getPhoneImage(event.target)
+    getPhoneImage(event.target);
 
     event.target.classList.toggle('no-screen');
 })    
 
-
 /*Portfolio Tabs*/
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let swap = array[i];
-        array[i] = array[j];
-        array[j] = swap;
-    }
-
-    return array;
-}
 
 const portfolioBlock = document.querySelector('.portfolio');
 
@@ -97,23 +111,7 @@ const badges = badgesContainer.querySelectorAll('.item');
 const portfolioImagesContainer = portfolioBlock.querySelector('.images')
 const portfolioImages = portfolioImagesContainer.querySelectorAll('.image-item');
 
-
-const fullArray = (array) => {
-    for (let i = 0; i < 12; i++) {
-        array.push(i);
-    }
-
-    return array;
-};
 const imagesArray = fullArray([]);
-
-const getItemImageTemplate = (n) => {
-    return `
-    <div class="image-item">
-        <img src="assets/portfolio-image-${n + 1}.png" alt="" data-number=${n + 1}>
-    </div>`;
-}
-
 
 badgesContainer.addEventListener('click', (event) => {
     if (event.target.className !== 'item') return;
@@ -127,7 +125,6 @@ badgesContainer.addEventListener('click', (event) => {
         portfolioImagesContainer.innerHTML += getItemImageTemplate(imagesArray[i]);
     }
 });
-
 
 portfolioImagesContainer.addEventListener('click', (event) => {
     if (event.target.tagName !== "IMG") return;
