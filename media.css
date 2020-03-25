@@ -1,0 +1,340 @@
+/*Media Queries*/
+@media (min-width: 768px) and (max-width: 1020px) {
+  /*Slider*/
+  .header {
+    padding-left: 43px;
+  }
+
+  .header-navigation {
+    margin-top: 7px;
+  }
+
+  .header-navigation-item:not(:first-child)::before {
+    bottom: 6px;
+  }
+
+  /*Slider*/
+  .slider {
+    height: 452px;
+  }
+
+  .slider-content .first-slide img:first-child {
+    top: 40px;
+    left: 87px;
+
+    width: 180px;
+    height: 363px;
+  }
+
+  .slider-content .first-slide img:last-child {
+    top: 133px;
+    left: 322px;
+
+    width: 364px;
+    height: 180px;
+  }
+
+  .slider-button.prev {
+    padding-top: 6px;
+    padding-left: 33px;
+  }
+
+  .slider-button.next {
+    padding-top: 6px;
+    padding-right: 24px;
+  }
+
+  /*Our Services*/
+  .our-services {
+    position: relative;
+
+    padding: 40px 0 6px 46px;
+
+    background-color: #f2f2f2;
+  }
+
+  .our-services-list-item {
+    margin-right: 53px;
+  }
+
+  .our-services-subtitle {
+    margin-bottom: 34px;
+  }
+
+  .our-services-list-item:not(:last-child) {
+    margin-bottom: 56px;
+  }
+
+  /*Portfolio*/
+  .portfolio {
+    padding-left: 44px;
+  }
+
+  .portfolio .title {
+    margin-bottom: 18px;
+  }
+
+  .portfolio .subtitle {
+    line-height: 30px;
+  }
+
+  .images .image-item {
+    margin-right: 13px;
+    margin-bottom: 14px;
+  }
+
+  .images .image-item img {
+    width: 216px;
+    height: 184px;
+  }
+
+  .portfolio .badges {
+    margin-top: 12px;
+    margin-bottom: 28px;
+  }
+
+  /*About Us*/
+  .about-us {
+    padding: 52px 40px 74px 46px;
+  }
+
+  .about-us .subtitle {
+    margin-bottom: 36px;
+  }
+
+  .team .teammate:not(:last-child) {
+    margin-right: 14px;
+  }
+
+  .teammate .image-container img {
+    width: 219px;
+    height: 219px;
+    margin-bottom: 7px;
+  }
+
+  .teammate .name {
+    margin-bottom: 0;
+  }
+
+  .teammate .description {
+    margin-bottom: 12px;
+
+    line-height: 22px;
+  }
+
+  /*Get a Quote*/
+  .get-quote {
+    padding: 54px 40px 45px 45px;
+  }
+
+  .get-quote .wrapper > .subtitle {
+    margin-bottom: 26px;
+  }
+
+  .form-container .form {
+    margin-right: 28px;
+  }
+
+  .form-container input,
+  textarea {
+    width: 418px;
+    padding-left: 7px;
+  }
+
+  .form-container input {
+    margin-bottom: 12.5px;
+  }
+
+  .form-container textarea {
+    margin-bottom: 17px;
+  }
+
+  .contact-information .title {
+    margin-bottom: 0;
+  }
+
+  .contact-information .subtitle {
+    margin-bottom: 12px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  /*Header*/
+  .header {
+    display: flex;
+    justify-content: center;
+    padding: 24px 7px 23px 19px;
+  }
+
+  .header-title {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.03em;
+  }
+
+  .burger-icon-container {
+    position: absolute;
+    top: 26px;
+    left: 20px;
+
+    cursor: pointer;
+  }
+
+  .header-navigation {
+    display: none;
+  }
+
+  /*Slider*/
+  .slider {
+    height: 220px;
+  }
+
+  .slider-button.prev {
+    padding-left: 9px;
+  }
+
+  .slider-button.next {
+    padding-right: 9px;
+  }
+
+  .slider-content .first-slide img:first-child {
+    top: 19px;
+    left: 41px;
+
+    width: 88px;
+    height: 177px;
+  }
+
+  .slider-content .first-slide img:last-child {
+    top: 65px;
+    left: 156px;
+
+    width: 177px;
+    height: 88px;
+  }
+
+  /*Our Services*/
+  .our-services {
+    padding: 25px 29px 30px 32px;
+  }
+
+  .our-services-subtitle {
+    margin-bottom: 29px;
+    padding-right: 16px;
+  }
+
+  .our-services-list-item {
+    margin-right: 0;
+  }
+
+  .our-services-list-item:not(:last-child) {
+    margin-bottom: 31px;
+  }
+
+  .our-services-list {
+    margin-bottom: 0;
+  }
+
+  /*Portfolio*/
+  .portfolio {
+    padding: 42px 30px 27px 30px;
+  }
+
+  .portfolio .title {
+    margin-bottom: 21px;
+  }
+
+  .portfolio .badges {
+    margin-top: 16px;
+    margin-bottom: 26px;
+  }
+
+  .images .image-item {
+    margin-bottom: 10px;
+  }
+
+  .images .image-item img {
+    width: 151px;
+    height: 128px;
+  }
+
+  .images .image-item:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  .images .image-item:nth-child(n + 9) {
+    display: none;
+  }
+
+  /*About Us*/
+  .about-us {
+    padding: 33px 30px 45px 30px;
+  }
+
+  .about-us .subtitle {
+    margin-bottom: 27px;
+
+    font-size: 18.5px;
+  }
+
+  .about-us .team {
+    flex-direction: column;
+  }
+
+  .team .teammate:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 34px;
+  }
+
+  .teammate .image-container img {
+    width: 314px;
+    height: 314px;
+    margin-bottom: 13px;
+  }
+
+  /*Get a Quote*/
+  .get-quote {
+    padding: 45px 30px 34px 30px;
+  }
+
+  .get-quote .wrapper > .subtitle {
+    margin-bottom: 25px;
+
+    font-size: 18.5px;
+  }
+
+  .get-quote .form-container {
+    flex-direction: column;
+  }
+
+  .form-container input,
+  textarea {
+    width: 291px;
+  }
+
+  .form-container .form {
+    margin-bottom: 32px;
+  }
+
+  .form-container textarea {
+    margin-bottom: 13px;
+  }
+
+  .form-container .form button {
+    width: 315px;
+    height: 50px;
+  }
+
+  .adress-container .item {
+    margin-bottom: 8px;
+  }
+  /*Footer*/
+  .footer {
+    justify-content: center;
+  }
+
+  .footer .copyright {
+    display: none;
+  }
+}
+/*Media Queries*/
