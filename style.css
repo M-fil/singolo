@@ -389,23 +389,20 @@ header {
 .our-services__list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 
   padding-inline-start: 0;
 }
 
 .service__item {
   display: flex;
-  width: 300px;
-  margin-right: 20px;
-}
-
-.service__item:nth-child(3n) {
-  margin-right: 0;
-}
-
-.service__item:not(:last-child) {
+  flex-basis: 32%;
   margin-bottom: 35px;
 }
+
+/*.service__item:not(:last-child) {
+  margin-bottom: 35px;
+}*/
 
 .service__icon {
   display: block;
@@ -487,7 +484,8 @@ header {
   height: 19px;
   padding: 0 6px;
 
-  line-height: 0.8rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
   font-family: "Lato-regular";
   color: #767e9e;
 
@@ -515,11 +513,12 @@ header {
 .portfolio__images {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .portfolio__images .image {
-  margin-right: 20px;
-  margin-bottom: 13.4px;
+  flex-basis: 25%;
+  margin-bottom: 13.5px;
 }
 
 .portfolio__images .image:nth-child(n + 13) {
@@ -653,11 +652,21 @@ header {
   display: flex;
 }
 
+.get-quote__form form {
+  display: flex;
+  flex-basis: 65%;
+  flex-direction: column;
+  margin-right: 28px;
+}
+
+.get-quote__contact {
+  flex-basis: 30%;
+}
+
 .get-quote__form input,
 textarea {
-  width: 590px;
+  width: 100%;
   max-width: 590px;
-  margin-bottom: 16px;
   padding: 0 15px;
   padding-left: 14.5px;
 
@@ -677,12 +686,6 @@ textarea::placeholder {
   color: #f48c8f;
 }
 
-.get-quote__form form {
-  display: flex;
-  flex-direction: column;
-  margin-right: 21px;
-}
-
 .form__field:hover {
   transition: 0.3s;
 }
@@ -693,6 +696,7 @@ textarea::placeholder {
 
 .get-quote__form input {
   height: 38px;
+  margin-bottom: 16px;
 }
 
 .comment_field {
