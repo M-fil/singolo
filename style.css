@@ -155,7 +155,7 @@ header {
 .header__title a {
   display: flex;
 
-  font-size: 2.4rem;
+  font-size: 2.5rem;
   line-height: 3rem;
   font-family: "Lato-bold";
   color: #ffffff;
@@ -316,14 +316,20 @@ header {
 
 .first_slide img:first-child {
   position: absolute;
-  top: 54px;
-  left: 112px;
+  top: 9%;
+  left: 11%;
+
+  width: 23.5%;
+  height: 80.5%;
 }
 
 .first_slide img:last-child {
   position: absolute;
-  top: 177px;
-  left: 425px;
+  top: 29.5%;
+  left: 41.7%;
+
+  width: 47.5%;
+  height: 40%;
 }
 
 /*second-slide*/
@@ -400,10 +406,6 @@ header {
   margin-bottom: 35px;
 }
 
-/*.service__item:not(:last-child) {
-  margin-bottom: 35px;
-}*/
-
 .service__icon {
   display: block;
   display: flex;
@@ -425,10 +427,12 @@ header {
 
 .service__title {
   font-size: 1.8rem;
+  line-height: 1.8rem;
   font-family: "Lato-black";
   color: #666d89;
 }
 .service__description {
+  max-width: 220px;
   height: 60px;
   padding-top: 7px;
   overflow: hidden;
@@ -518,7 +522,7 @@ header {
 
 .portfolio__images .image {
   flex-basis: 25%;
-  margin-bottom: 13.5px;
+  margin-bottom: 1.4%;
 }
 
 .portfolio__images .image:nth-child(n + 13) {
@@ -569,16 +573,12 @@ header {
 
 .about-us__team {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .teammate {
   display: block;
   flex-basis: 30%;
-}
-
-.teammate:not(:last-child) {
-  margin-right: 20px;
 }
 
 .teammate__image img {
@@ -600,6 +600,7 @@ header {
 }
 
 .teammate__description {
+  max-width: 220px;
   margin-bottom: 24px;
 
   line-height: 2.2rem;
@@ -650,6 +651,7 @@ header {
 
 .get-quote__form {
   display: flex;
+  justify-content: space-between;
 }
 
 .get-quote__form form {
@@ -896,5 +898,160 @@ input:focus {
 }
 /*Modal-Window*/
 
+@media (max-width: 1019px) {
+  /*Header*/
+  .header {
+    padding: 30px 0 35.5px 0;
+  }
 
+  .header .wrapper {
+    padding: 0 43.5px 0 39.7px;
+  }
 
+  .header__navigation .navigation {
+    margin-top: 7px;
+  }
+
+  .navigation__link:not(:last-child) {
+    margin-right: 29.2px;
+  }
+
+  /*Slider*/
+  .slider .wrapper {
+    height: 451px;
+  }
+
+  .button_prev {
+    padding-top: 8px;
+    padding-left: 29.7px;
+  }
+
+  .button_next {
+    padding-top: 8px;
+    padding-right: 26.5px;
+  }
+
+  /*Our Services*/
+  .our-services {
+    padding: 40px 40px 10.5px 41px;
+  }
+
+  .service__item {
+    flex-basis: 48.5%;
+    margin-bottom: 58.9px;
+  }
+
+  .our-services__subtitle {
+    margin-bottom: 38.9px;
+  }
+
+  .service__icon {
+    margin-top: 0;
+  }
+
+  /*Portfolio*/
+  .portfolio {
+    padding: 59px 40px 51px 40px;
+  }
+
+  .portfolio__title {
+    margin-bottom: 19.5px;
+  }
+
+  .portfolio__subtitle {
+    font-size: 1.9rem;
+  }
+
+  .portfolio__tabs {
+    margin-bottom: 28.5px;
+  }
+
+  .portfolio__images {
+    justify-content: space-between;
+  }
+
+  .portfolio__images .image {
+    height: 184px;
+    margin-bottom: 20px;
+  }
+
+  .portfolio__images .image img {
+    width: 216px;
+    height: 184px;
+  }
+
+  /*About Us*/
+  .about-us {
+    padding: 53px 32px 76px 42px;
+  }
+
+  .about-us__subtitle {
+    margin-bottom: 37.5px;
+  }
+
+  .teammate {
+    flex-basis: 32.5%;
+    margin-right: 0;
+  }
+
+  .teammate__image {
+    height: 219px;
+    margin-bottom: 14px;
+  }
+
+  .teammate__image img {
+    width: 219px;
+    height: 219px;
+  }
+
+  .teammate__name {
+    margin-bottom: 2px;
+  }
+
+  .teammate__description {
+    margin-bottom: 10.5px;
+  }
+
+  /*Get a Quote*/
+  .get-quote {
+    padding: 54px 37px 44.5px 41px;
+  }
+
+  .get-quote__subtitle {
+    margin-bottom: 25.5px;
+  }
+
+  .get-quote__form input,
+  textarea {
+    padding: 0;
+    padding-left: 6.5px;
+  }
+
+  .get-quote__form form {
+    flex-basis: 62.8%;
+  }
+
+  .get-quote__form input {
+    margin-bottom: 12px;
+  }
+
+  .comment_field {
+    margin-bottom: 17px;
+  }
+
+  .get-quote__contact {
+    flex-basis: 32%;
+  }
+
+  .contact__title {
+    margin-bottom: 3.5px;
+  }
+
+  .contact__subtitle {
+    margin-bottom: 11.5px;
+  }
+
+  .adress__content img {
+    margin-right: 8px;
+  }
+}
