@@ -925,6 +925,7 @@ input:focus {
 }
 /*Modal-Window*/
 
+/*Media Queries*/
 @media (max-width: 1019px) {
   /*Header*/
   .header {
@@ -1311,5 +1312,26 @@ input:focus {
 
   .footer__copyright {
     display: none;
+  }
+}
+
+@media (max-width: 374px) {
+  /*Portfolio*/
+  .portfolio__tabs .tab {
+    font-size: 1rem;
+  }
+
+  .portfolio__images .image img {
+    width: 123px;
+  }
+
+  /*About Us*/
+  .teammate__image {
+    height: 260px;
+  }
+
+  .teammate__image img {
+    width: 260px;
+    height: 260px;
   }
 }
