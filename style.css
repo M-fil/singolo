@@ -266,19 +266,9 @@ header {
   padding-top: 95px;
 
   background-color: #f06c64;
-}
+  border-bottom: 6px solid #ea676b;
 
-.slider::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  width: 100%;
-  height: 600px;
-  height: 6px;
-
-  background-color: #ea676b;
+  transition: all 0.05s;
 }
 
 .slider .wrapper {
@@ -287,7 +277,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 600px;
+  height: 594px;
 }
 
 .slider-button__container {
@@ -321,11 +311,20 @@ header {
   cursor: pointer;
 }
 
+object.blue .arrow-svg {
+  fill: #5679d4;
+}
+.arrow-svg {
+  fill: #e94348;
+}
+
 .button_prev {
-  padding-left: 42px;
+  padding-top: 6px;
+  padding-left: 40px;
 }
 
 .button_next {
+  padding-top: 6px;
   padding-right: 40px;
 }
 
@@ -364,8 +363,6 @@ header {
 
 .second_slide {
   height: 100%;
-
-  background-color: #648bf0;
 }
 
 .second_slide::after {
@@ -374,20 +371,21 @@ header {
 
 .second_slide img:first-child {
   position: absolute;
-  top: 43px;
-  left: 383px;
+  top: 7.2%;
+  left: 37.6%;
 }
 
 .second_slide img:nth-child(2) {
   position: absolute;
-  top: 152px;
-  left: 252px;
+  top: 25.4%;
+  left: 24.7%;
+  z-index: 10;
 }
 
 .second_slide img:last-child {
   position: absolute;
-  top: 152px;
-  left: 612px;
+  top: 25.4%;
+  left: 60%;
 }
 /*Slider*/
 
@@ -853,7 +851,7 @@ input:focus {
   z-index: 1000;
 
   width: 40vw;
-  height: 30vh;
+  max-height: 200px;
   margin: auto;
   padding: 20px 15px;
 
@@ -863,21 +861,19 @@ input:focus {
   border: 3px solid #f06c64;
 }
 
-.modal__container .wrapper {
+.modal__content {
   height: 100%;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .modal__title {
   margin: 0;
   margin-bottom: 20px;
 
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-family: "Lato-bold";
   text-align: center;
-}
-
-.modal__message {
-  margin-bottom: 30px;
 }
 
 .message__item {
@@ -885,15 +881,14 @@ input:focus {
 }
 
 .message__item .field {
-  font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  font-family: "Lato-black";
   color: #f06c64;
 }
 
 .message__item .content {
-  height: 80px;
-
-  font-weight: 500;
+  font-size: 1.5rem;
+  font-family: "Lato-light";
   word-break: break-word;
 }
 
@@ -944,7 +939,7 @@ input:focus {
 
   /*Slider*/
   .slider .wrapper {
-    height: 451px;
+    height: 445px;
   }
 
   .button_prev {
@@ -1138,7 +1133,7 @@ input:focus {
   }
 
   .slider .wrapper {
-    height: 220.59px;
+    height: 214.59px;
   }
 
   .arrow__button img {
@@ -1356,6 +1351,11 @@ input:focus {
 
   .footer__copyright {
     display: none;
+  }
+
+  /*Modal*/
+  .modal__title {
+    font-size: 2rem;
   }
 }
 

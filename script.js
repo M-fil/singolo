@@ -1,10 +1,14 @@
+window.onload = () => {
+    console.log('Singolo. DOM & Responsive');
+}
+
 /*Functions*/
-function selectSingleElementFromList(element, html) {
-    let selected = element.closest(html).querySelectorAll('.selected');
+function selectSingleElementFromList(element, html, selectedClass) {
+    let selected = element.closest(html).querySelectorAll(`.${selectedClass}`);
     for (const item of selected) {
-        item.classList.remove('selected');
+        item.classList.remove(selectedClass);
     }
-    element.classList.add('selected');
+    element.classList.add(selectedClass);
 }
 
 function getPhoneImage(elem) {
@@ -18,39 +22,21 @@ function getPhoneImage(elem) {
     }
 }
 
-function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let swap = array[i];
-        array[i] = array[j];
-        array[j] = swap;
-    }
-
-    return array;
-}
-
-function fullArray(array) {
-    for (let i = 0; i < 12; i++) {
-        array.push(i);
-    }
-    return array;
-};
-
 const getItemImageTemplate = (n) => {
     return `
-    <div class="image-item">
+    <div class="image">
         <img src="assets/portfolio-image-${n + 1}.png" alt="" data-number=${n + 1}>
     </div>`;
 }
 
 /*Navigation*/
-const anchors = document.querySelectorAll('.header-navigation-item a');
-let headerNavigationList = document.querySelector('.header-navigation');
+let headerNavigationList = document.querySelector('.header__navigation .navigation');
+const navLinks = document.querySelectorAll('.navigation__link a');
 
 headerNavigationList.addEventListener('click', (event) => {
     if (event.target.parentElement.tagName !== 'LI') return;
 
-    selectSingleElementFromList(event.target.parentElement, 'ul');
+    selectSingleElementFromList(event.target.parentElement, 'ul', 'link_selected');
 
     const blockId = document.querySelector(`[data-scrollid=${event.target.getAttribute('href').slice(1)}]`);
     blockId.scrollIntoView({block: 'center', behavior: 'smooth'});
@@ -59,37 +45,54 @@ headerNavigationList.addEventListener('click', (event) => {
 /*Slider*/
 
 const sliderBlock = document.querySelector('.slider');
-const slidesContainer = document.querySelector('.slider-content');
+const slidesContainer = document.querySelector('.slider__content');
 
-const prevButton = sliderBlock.querySelector('.prev');
-const nextButton = sliderBlock.querySelector('.next');
+const prevButton = sliderBlock.querySelector('.prev-button_container');
+const nextButton = sliderBlock.querySelector('.next-button_container');
 
 const firstSlide = `
-<div class="first-slide">
-    <img class="slider-content-item" src="assets/phone1.png" alt="">
-    <img class="slider-content-item" src="assets/phone2.png" alt="">
+<div class="first_slide">
+    <img src="assets/phone1.png" alt="phone1-1-slide">
+    <img src="assets/phone2.png" alt="phone2-1-slide">
 </div>`;
 
 const secondSlide = `
-<div class="second-slide">
-    <img class="slider-content-item" src="assets/slider-content-center.png" alt="">
-    <img class="slider-content-item" src="assets/slider-content-side.png" alt="">
-    <img class="slider-content-item" src="assets/slider-content-side.png" alt="">
+<div class="second_slide">
+    <img src="assets/slider-content-center.png" alt="phone1-2-silde">
+    <img src="assets/slider-content-side.png" alt="phone2-2-slide">
+    <img src="assets/slider-content-side.png" alt="phone3-2-slide">
 </div>`;
 
 const list = [firstSlide, secondSlide];
 let current = 0;
 let length = list.length - 1;
 
-nextButton.parentElement.addEventListener('click', () => {
+nextButton.addEventListener('click', () => {
     current = current < length ? current + 1 : 0;
     slidesContainer.innerHTML = list[current];
+    setSliderStyles();
 });
 
-prevButton.parentElement.addEventListener('click', () => {
+prevButton.addEventListener('click', () => {
     current = current > 0 ? current - 1 : length;
     slidesContainer.innerHTML = list[current];
+    setSliderStyles();
 });
+
+const setSliderStyles = () => {
+    switch(slidesContainer.firstElementChild.className) {
+        case 'first_slide': setColors('#f06c64', '#e94348', '#ea676b');
+        break;
+        case 'second_slide': setColors('#648bf0', '#5679d4');
+        break;
+        default: setColors('#f06c64', '#e94348', '#ea676b');
+    }
+}
+
+const setColors = (backgroundColor, arrowColor, borderColor) => {
+    sliderBlock.style.backgroundColor = backgroundColor;
+    sliderBlock.style.borderColor = borderColor ? borderColor : backgroundColor;
+}
 
 /*Screens of Smartphones*/
 
@@ -105,51 +108,69 @@ sliderBlock.addEventListener('click', (event) => {
 
 const portfolioBlock = document.querySelector('.portfolio');
 
-const badgesContainer = portfolioBlock.querySelector('.badges');
-const badges = badgesContainer.querySelectorAll('.item');
+const tabsContainer = portfolioBlock.querySelector('.portfolio__tabs');
 
-const portfolioImagesContainer = portfolioBlock.querySelector('.images')
-const portfolioImages = portfolioImagesContainer.querySelectorAll('.image-item');
+const portfolioImagesContainer = portfolioBlock.querySelector('.portfolio__images')
+const portfolioImages = portfolioImagesContainer.querySelectorAll('.image');
 
-const imagesArray = fullArray([]);
+const imagesArray = fullArrayWithNumbers();
 
-badgesContainer.addEventListener('click', (event) => {
-    if (event.target.className !== 'item') return;
+tabsContainer.addEventListener('click', (event) => {
+    if (event.target.className !== 'tab') return;
 
     portfolioImagesContainer.innerHTML = '';
 
-    selectSingleElementFromList(event.target, 'ul');
+    selectSingleElementFromList(event.target, 'ul', 'tab_selected');
     shuffle(imagesArray);
 
-    for (let i = 0; i < imagesArray.length; i++) {
-        portfolioImagesContainer.innerHTML += getItemImageTemplate(imagesArray[i]);
-    }
+    imagesArray.forEach(image => {
+        portfolioImagesContainer.innerHTML += getItemImageTemplate(image)
+    });
 });
 
 portfolioImagesContainer.addEventListener('click', (event) => {
     if (event.target.tagName !== "IMG") return;
 
-    selectSingleElementFromList(event.target, '.images');  
+    selectSingleElementFromList(event.target, '.portfolio__images', 'image_selected');  
 });
+
+function fullArrayWithNumbers() {
+    const array = [];
+    for (let i = 0; i < portfolioImagesContainer.childElementCount; i++) {
+        array.push(i);
+    }
+    return array;
+};
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let swap = array[i];
+        array[i] = array[j];
+        array[j] = swap;
+    }
+
+    return array;
+}
 
 
 /*Form*/
-const modalContainer = document.querySelector('.modal-conainer');
-const modalWindow = document.querySelector('.modal-window');
-const themeContent = modalWindow.querySelector('.theme .content');
-const descriptionContent = modalWindow.querySelector('.description .content');
-const confirmButton = modalContainer.querySelector('.confirm-button');
+const modal = document.querySelector('.modal');
+const modalContainer = document.querySelector('.modal__container');
+const themeContent = modalContainer.querySelector('.message_theme .content');
+const descriptionContent = modalContainer.querySelector('.message_description .content');
+const confirmButton = modal.querySelector('.message__button');
 
-const formContainer = document.querySelector('.form-container form');
-const nameField = formContainer.querySelector('.name-field');
-const emailField = formContainer.querySelector('.email-field');
-const subjectField = formContainer.querySelector('.subject-field');
-const commentField = formContainer.querySelector('.comment-field');
+const formContainer = document.querySelector('.get-quote__form form');
+const nameField = formContainer.querySelector('.name_field');
+const emailField = formContainer.querySelector('.email_field');
+const subjectField = formContainer.querySelector('.subject_field');
+const commentField = formContainer.querySelector('.comment_field');
 
 formContainer.addEventListener('submit', (event) => {
     event.preventDefault();
 
-    modalContainer.classList.remove('hidden');
+    modal.classList.remove('hidden');
     themeContent.textContent = subjectField.value.trim() !== '' ? subjectField.value : 'Без темы';
     descriptionContent.textContent = commentField.value.trim() !== '' ? commentField.value : 'Без описания';
 
@@ -157,7 +178,7 @@ formContainer.addEventListener('submit', (event) => {
 });
 
 confirmButton.addEventListener('click', () => {
-    modalContainer.classList.add('hidden');
+    modal.classList.add('hidden');
     document.body.style.overflow = 'initial';
 
     nameField.value = '';
