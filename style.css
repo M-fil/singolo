@@ -239,7 +239,8 @@ header {
   cursor: pointer;
 }
 
-.navigation__link a:hover::after {
+.navigation__link a:hover::after,
+.link_selected a::after {
   content: "";
   position: absolute;
 
@@ -250,7 +251,8 @@ header {
   background-color: #ffffff;
 }
 
-.link_selected a:hover::after {
+.link_selected a:hover::after,
+.link_selected a::after {
   background-color: #f06c64;
 }
 
@@ -563,6 +565,8 @@ object.blue .arrow-svg {
 
 .portfolio__images .image_selected {
   box-shadow: 0 0 0 5px #f06c64;
+
+  transition: 0.3s;
 }
 
 /*Portfolio*/
