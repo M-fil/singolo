@@ -11,6 +11,11 @@ window.onload = () => {
 
 /*Navigation*/
 const activateNavigation = (type) => {
+    const burgerButton = document.querySelector('.header__burger');
+    const burgerNavigation = document.querySelector('.burger__navigation');
+    const headerTitle = document.querySelector('.header__title');
+    const overlay = document.querySelector('.overlay');
+
     let headerNavigationList = document.querySelector(`.${type} .navigation`);
     
     document.addEventListener('scroll', () => {
@@ -22,6 +27,13 @@ const activateNavigation = (type) => {
         
         const blockId = document.querySelector(`[data-scrollid=${event.target.getAttribute('href').slice(1)}]`);
         blockId.scrollIntoView({block: 'start', behavior: 'smooth'});
+
+        if (document.querySelector('.burger__navigation')) {
+            burgerNavigation.classList.remove('open_navigation');
+            burgerButton.classList.remove('rotated');
+            headerTitle.classList.remove('moved');
+            overlay.classList.remove('show-overlay');
+        }
     });
 }
 
@@ -104,21 +116,6 @@ const activateSlider = () => {
         }
         slidesContainer.style.transform = `translate(${offset}%)`
     });
-}
-
-const setSliderStyles = () => {
-    switch(slidesContainer.firstElementChild.className) {
-        case 'first_slide': setColors('#f06c64', '#ea676b');
-        break;
-        case 'second_slide': setColors('#648bf0');
-        break;
-        default: setColors('#f06c64', '#ea676b');
-    }
-}
-
-const setColors = (backgroundColor, borderColor) => {
-    sliderBlock.style.backgroundColor = backgroundColor;
-    sliderBlock.style.borderColor = borderColor ? borderColor : backgroundColor;
 }
 
 /*Screens of Smartphones*/
