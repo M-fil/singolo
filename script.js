@@ -111,7 +111,7 @@ const activateSlider = () => {
             current = length;
         }
         else {
-            offset += calculatedOffest; 
+            offset -= calculatedOffest; 
             current--;
         }
         slidesContainer.style.transform = `translate(${offset}%)`
