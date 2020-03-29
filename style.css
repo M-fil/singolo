@@ -66,11 +66,34 @@ a {
 section,
 footer,
 header {
+  z-index: 50;
+
   display: flex;
   justify-content: center;
 }
 
 /*Common Classes*/
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  background-color: rgba(45, 48, 58, 0.6);
+  opacity: 0;
+
+  transition: all 0.5s;
+}
+
+.show-overlay {
+  z-index: 650;
+
+  width: 100vw;
+  height: 100vh;
+
+  opacity: 1;
+}
+
 .hidden {
   display: none;
 }
@@ -150,6 +173,7 @@ header {
 
 .header__burger {
   position: relative;
+  z-index: 800;
 
   display: none;
   width: 25px;
@@ -178,6 +202,10 @@ header {
 
 .burger__line:last-child {
   bottom: 0;
+}
+
+.header__title {
+  z-index: 800;
 }
 
 .header__title a {
@@ -1171,24 +1199,75 @@ input:focus {
     display: none;
   }
 
-  .header__navigation {
-    display: none;
-  }
-
   .header .wrapper {
     align-items: center;
     padding: 0 35.3px 0 20px;
   }
 
+  .header__navigation {
+    display: none;
+  }
+
+  .open_navigation {
+    left: 0 !important;
+  }
+
+  .burger__navigation {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 750;
+
+    width: 74.1%;
+    height: 100vh;
+
+    background: #2d303a;
+    box-shadow: 0 -40px 20px rgba(0, 0, 0, 0.4);
+
+    transition: left 0.5s;
+  }
+
+  .burger__navigation .navigation {
+    position: absolute;
+    top: 221px;
+    left: 71px;
+
+    flex-direction: column;
+  }
+
+  .navigation__link {
+    font-size: 2.4rem;
+    line-height: 2.9rem;
+    letter-spacing: -0.035em;
+  }
+
+  .navigation__link:not(:last-child) {
+    margin-bottom: 29px;
+  }
+
+  .navigation__link::before {
+    display: none;
+  }
+
   .header__burger {
     display: block;
     margin-bottom: 0.8px;
+
+    transition: all 0.5s;
+  }
+
+  .header__burger.rotated {
+    transform: rotate(90deg);
   }
 
   .header__title {
     display: flex;
     flex-grow: 1;
     justify-content: center;
+  }
+
+  .header__title.moved a {
+    transform: translateX(calc(-100% + 13px));
   }
 
   .header__title a {
@@ -1239,7 +1318,7 @@ input:focus {
   }
 
   .second_slide__container {
-    width: 237px;
+    width: 235px;
     height: 200px;
   }
 

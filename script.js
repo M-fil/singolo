@@ -1,7 +1,8 @@
 window.onload = () => {
     console.log('Singolo. DOM & Responsive');
 
-    activateNavigation();
+    activateNavigation('header__navigation');
+    activateBurgerNavigation();
     activateSlider();
     activatePhonesScreens();
     activatePortfolioTabs();
@@ -9,8 +10,8 @@ window.onload = () => {
 }
 
 /*Navigation*/
-const activateNavigation = () => {
-    let headerNavigationList = document.querySelector('.header__navigation .navigation');
+const activateNavigation = (type) => {
+    let headerNavigationList = document.querySelector(`.${type} .navigation`);
     
     document.addEventListener('scroll', () => {
         changeSelectedLinkByScrollPosition();
@@ -20,7 +21,7 @@ const activateNavigation = () => {
         if (event.target.parentElement.tagName !== 'LI') return;
         
         const blockId = document.querySelector(`[data-scrollid=${event.target.getAttribute('href').slice(1)}]`);
-        blockId.scrollIntoView({block: 'center', behavior: 'smooth'});
+        blockId.scrollIntoView({block: 'start', behavior: 'smooth'});
     });
 }
 
@@ -39,7 +40,7 @@ const changeSelectedLinkByScrollPosition = () => {
     const pageSectionsOfNavigation = document.querySelectorAll('[data-scrollid]');
 
     pageSectionsOfNavigation.forEach(section => {
-        if ((section.offsetTop - section.offsetHeight / 1.5) <= currentPositionY) {
+        if ((section.offsetTop - 150) <= currentPositionY) {
             navLinks.forEach(link => {
                 link.classList.remove('link_selected')
                 if (section.dataset.scrollid === link.firstElementChild.getAttribute('href').slice(1)) {
@@ -47,6 +48,23 @@ const changeSelectedLinkByScrollPosition = () => {
                 }
             })
         }
+    });
+}
+
+/*Burger Navigation*/
+const activateBurgerNavigation = () => {
+    activateNavigation('burger__navigation');
+
+    const burgerButton = document.querySelector('.header__burger');
+    const burgerNavigation = document.querySelector('.burger__navigation');
+    const headerTitle = document.querySelector('.header__title');
+    const overlay = document.querySelector('.overlay');
+
+    burgerButton.addEventListener('click', () => {
+        burgerNavigation.classList.toggle('open_navigation');
+        burgerButton.classList.toggle('rotated');
+        headerTitle.classList.toggle('moved');
+        overlay.classList.toggle('show-overlay');
     });
 }
 
