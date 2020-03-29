@@ -66,9 +66,11 @@ const activateSlider = () => {
     
     const secondSlide = `
     <div class="second_slide">
-        <img src="assets/slider-content-center.png" alt="phone1-2-silde">
-        <img src="assets/slider-content-side.png" alt="phone2-2-slide">
-        <img src="assets/slider-content-side.png" alt="phone3-2-slide">
+        <div class="second_slide__container">
+            <img src="assets/slider-content-center.png" alt="phone1-2-silde">
+            <img src="assets/slider-content-side.png" alt="phone2-2-slide">
+            <img src="assets/slider-content-side.png" alt="phone3-2-slide">
+        </div>
     </div>`;
     
     const list = [firstSlide, secondSlide];
@@ -91,15 +93,15 @@ const activateSlider = () => {
 
 const setSliderStyles = () => {
     switch(slidesContainer.firstElementChild.className) {
-        case 'first_slide': setColors('#f06c64', '#e94348', '#ea676b');
+        case 'first_slide': setColors('#f06c64', '#ea676b');
         break;
         case 'second_slide': setColors('#648bf0', '#5679d4');
         break;
-        default: setColors('#f06c64', '#e94348', '#ea676b');
+        default: setColors('#f06c64', '#ea676b');
     }
 }
 
-const setColors = (backgroundColor, arrowColor, borderColor) => {
+const setColors = (backgroundColor, borderColor) => {
     sliderBlock.style.backgroundColor = backgroundColor;
     sliderBlock.style.borderColor = borderColor ? borderColor : backgroundColor;
 }

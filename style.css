@@ -122,7 +122,7 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 500;
 
   width: 100%;
   padding: 30px 0 33px 0;
@@ -262,6 +262,33 @@ header {
 /*Header*/
 
 /*Slider*/
+@keyframes to-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes to-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes hide-slide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 .slider {
   position: relative;
 
@@ -341,6 +368,18 @@ object.blue .arrow-svg {
 
 .first_slide {
   height: 100%;
+
+  transform: translateX(0);
+
+  animation: 0.5s ease-in-out;
+}
+
+.first_slide.to-left {
+  animation-name: to-left;
+}
+
+.first_slide.to-right {
+  animation-name: to-right;
 }
 
 .first_slide img:first-child {
@@ -364,30 +403,44 @@ object.blue .arrow-svg {
 /*second-slide*/
 
 .second_slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
+
+  transform: translateX(0);
+
+  animation: 0.5s ease-in-out;
 }
 
-.second_slide::after {
-  display: none;
+.second_slide__container {
+  position: relative;
+
+  width: 516.18px;
+  height: 513px;
 }
 
 .second_slide img:first-child {
   position: absolute;
-  top: 7.2%;
-  left: 37.6%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+
+  margin: 0 auto;
 }
 
 .second_slide img:nth-child(2) {
   position: absolute;
-  top: 25.4%;
-  left: 24.7%;
-  z-index: 10;
+  top: 21.1%;
+  left: 0;
 }
 
 .second_slide img:last-child {
   position: absolute;
-  top: 25.4%;
-  left: 60%;
+  top: 21.1%;
+  right: 0;
 }
 /*Slider*/
 
@@ -966,6 +1019,23 @@ input:focus {
     height: 180.93px;
   }
 
+  .second_slide__container {
+    width: 417px;
+    height: 413px;
+  }
+
+  .second_slide img:first-child {
+    width: 220px;
+    height: 416px;
+  }
+
+  .second_slide img:nth-child(2),
+  .second_slide img:last-child {
+    top: 25.1%;
+
+    width: 120px;
+  }
+
   /*Our Services*/
   .our-services {
     padding: 40px 40px 9px 41px;
@@ -1166,6 +1236,23 @@ input:focus {
 
     width: 177.61px;
     height: 88.3px;
+  }
+
+  .second_slide__container {
+    width: 237px;
+    height: 200px;
+  }
+
+  .second_slide img:first-child {
+    width: 120px;
+    height: 200px;
+  }
+
+  .second_slide img:nth-child(2),
+  .second_slide img:last-child {
+    top: 13.1%;
+
+    height: 140px;
   }
 
   /*Our Services*/
