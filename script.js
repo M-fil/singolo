@@ -113,7 +113,7 @@ const setSliderStyles = () => {
     switch(slidesContainer.firstElementChild.className) {
         case 'first_slide': setColors('#f06c64', '#ea676b');
         break;
-        case 'second_slide': setColors('#648bf0', '#5679d4');
+        case 'second_slide': setColors('#648bf0');
         break;
         default: setColors('#f06c64', '#ea676b');
     }

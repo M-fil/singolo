@@ -337,10 +337,10 @@
             </div>
             <div class="get-quote__form">
                 <form action="" method="GET">
-                    <input class="form__field name_field" type="text" placeholder="Name (required)" required>
-                    <input class="form__field email_field" type="email" placeholder="Email (required)" required>
-                    <input class="form__field subject_field" type="text" placeholder="Subject">
-                    <textarea class="form__field comment_field" placeholder="Describe your project in detail..."></textarea>
+                    <input class="form__field name_field" type="text" placeholder="Name (required)" required maxlength="40">
+                    <input class="form__field email_field" type="email" placeholder="Email (required)" required maxlength="40">
+                    <input class="form__field subject_field" type="text" placeholder="Subject" maxlength="100">
+                    <textarea class="form__field comment_field" placeholder="Describe your project in detail..." maxlength="250"></textarea>
                     <button class="form__field submit_button" type="submit">Send</button>
                 </form>
                 <div class="get-quote__contact">
