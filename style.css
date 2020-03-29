@@ -296,20 +296,18 @@ header {
   padding-top: 95px;
 
   background-color: #f06c64;
-  border-bottom: 6px solid #ea676b;
 }
 
 .slider .wrapper {
   position: relative;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 594px;
+  height: 600px;
+  overflow: hidden;
 }
 
 .slider-button__container {
   position: absolute;
+  top: 0;
   z-index: 100;
 
   display: flex;
@@ -339,13 +337,6 @@ header {
   cursor: pointer;
 }
 
-object.blue .arrow-svg {
-  fill: #5679d4;
-}
-.arrow-svg {
-  fill: #e94348;
-}
-
 .button_prev {
   padding-top: 6px;
   padding-left: 40px;
@@ -357,31 +348,33 @@ object.blue .arrow-svg {
 }
 
 .slider__content {
-  position: relative;
-
-  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 200%;
   height: 100%;
   overflow: hidden;
+
+  transform: translateX(0);
+
+  transition: all 1s;
 }
 
-.slider__slides {
-  position: relative;
-  left: 0;
-
-  display: flex;
-  height: 100%;
-
-  transition: all 0.5s;
+.slider__content::after {
+  display: block;
+  width: 100%;
 }
+
 /*first-slide*/
 
 .first_slide {
+  border-bottom: 6px solid #ea676b;
+}
+
+.first_slide,
+.second_slide {
   position: relative;
 
-  display: inline-block;
-  flex-grow: 1;
-
-  animation: 0.5s ease-in-out;
+  width: 100%;
 }
 
 .first_slide img:first-child {
@@ -405,11 +398,8 @@ object.blue .arrow-svg {
 /*second-slide*/
 
 .second_slide {
-  position: relative;
-
-  display: inline-block;
-
-  animation: 0.5s ease-in-out;
+  background-color: #648bf0;
+  border-bottom: 6px solid #648bf0;
 }
 
 .second_slide__container {

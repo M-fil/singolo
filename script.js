@@ -76,37 +76,34 @@ const activateSlider = () => {
     const prevButton = sliderBlock.querySelector('.prev-button_container');
     const nextButton = sliderBlock.querySelector('.next-button_container');
     
-    const firstSlide = `
-    <div class="first_slide">
-        <img src="assets/phone1.png" alt="phone1-1-slide">
-        <img src="assets/phone2.png" alt="phone2-1-slide">
-    </div>`;
-    
-    const secondSlide = `
-    <div class="second_slide">
-        <div class="second_slide__container">
-            <img src="assets/slider-content-center.png" alt="phone1-2-silde">
-            <img src="assets/slider-content-side.png" alt="phone2-2-slide">
-            <img src="assets/slider-content-side.png" alt="phone3-2-slide">
-        </div>
-    </div>`;
-    
-    const list = [firstSlide, secondSlide];
     let current = 0;
-    let length = list.length - 1;
-    
+    let length = slidesContainer.childElementCount - 1;
+    let offset = 0;
+    const calculatedOffest = 100 / slidesContainer.children.length;
+
     nextButton.addEventListener('click', () => {
-        current = current < length ? current + 1 : 0;
-        slidesContainer.innerHTML = list[current];
-        setSliderStyles();
+        if (current === length) {
+            offset = 0;
+            current = 0;
+        }
+        else {
+            offset += calculatedOffest;
+            current++;
+        }
+        slidesContainer.style.transform = `translate(-${offset}%)`
     });
     
     prevButton.addEventListener('click', () => {
-        current = current > 0 ? current - 1 : length;
-        slidesContainer.innerHTML = list[current];
-        setSliderStyles();
+        if (current === 0) {
+            offset = -length * calculatedOffest;
+            current = length;
+        }
+        else {
+            offset += calculatedOffest; 
+            current--;
+        }
+        slidesContainer.style.transform = `translate(${offset}%)`
     });
-    
 }
 
 const setSliderStyles = () => {
