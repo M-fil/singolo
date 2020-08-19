@@ -1,2 +1,1 @@
-# singolo
-https://m-fil.github.io/singolo/
+# Singolo - https://m-fil-singolo.netlify.app/
